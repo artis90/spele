@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spēle</title>
+<meta name="viewport" content="width=device-width, user-scalable=yes">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jQueryRotate.js"></script>
+<script src="js/autosize.min.js"></script>
+<script src="js/jquery-simple-validator.min.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="fancybox/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+<link href="media-queries.css" rel="stylesheet" type="text/css" />
+
+<script>
+$(document).ready(function() {
+	$('.character-icon').effect('bounce', {times: 3, distance: 75}, 600);
+	
+	function progress(p_class, p_value) {	 
+	  var elem = $(p_class).find('.progress-bar div');
+	  var p_count = elem.children('span').text().replace(/\D/g, '');
+	  var p_points = elem.parent().parent().children('.points').children('strong').text().replace(/\D/g, '');
+	  var p_bar = elem.attr('style').replace(/\D/g, ''); 
+	  
+	  elem.children('span').text('0' + p_value);
+	  elem.parent().parent().children('.points').children('strong').text('0');
+	  elem.width(0);
+	  
+	  setTimeout(function(){	  
+	  var width = 0;
+	  var id = setInterval(frame, 40);
+	  function frame() {
+		if (width >= p_bar) {
+		  clearInterval(id);
+		} else {
+		  width++; 
+		  p_count++;
+		  p_points++;
+		  elem.width(width + '%');
+		  elem.children('span').text(p_count - p_bar * 1  + p_value);
+		  elem.parent().parent().children('.points').children('strong').text(p_points - p_bar * 1);
+		}
+	  }
+	  }, 600);
+	}
+	
+	if ($(document).width() >= 1040) {
+		progress('.your-points', '%');
+		progress('.team-points', '%');
+		progress('.donate', ' eiro');
+	}		
+});
+</script>
+
+</head>
+<body>
+
+<div class="header">
+<div id="menu-bttn">
+<div class="m-line-1"></div>
+<div class="m-line-2"></div>
+<div class="m-line-3"></div>
+</div>
+
+<div class="find">
+<div>
+<a href="#" class="logo"></a>
+<a href="#">Atrodi savu aizraušanos</a>
+</div>
+</div>
+
+<div class="top-content">
+<div class="character">
+	<div>
+	<div class="character-icon ch-1-h"></div>
+	<span>Tu jau esi</span>
+	<div class="character-title">Mazais rūķis</div>
+	<div class="ul-slide-bttn"></div>
+	</div>
+</div>
+
+<div class="top-blocks">
+<ul>
+<li class="your-points">
+    <div>
+    <span class="block-title">Tavi punkti</span>
+    <span class="points"><strong>25</strong> <span>no 200</span></span>
+    <div class="progress-bar"><div style="width: 12%"><span>12%</span></div></div>
+    </div>
+</li>
+<li class="team-points">
+    <div>
+    <span class="block-title">Komandas punkti</span>
+    <span class="points"><strong>40</strong> <span>no 200</span></span>
+    <div class="progress-bar"><div style="width: 20%"><span>20%</span></div></div>
+    </div>
+</li>
+<li class="donate">
+    <div>
+    <span class="block-title">Palīdzam kopā</span>
+    <span class="block-text">foršai lauku skolai Latgalē nepieciešami <strong>500 eiro</strong></span>
+    <div class="progress-bar"><div style="width: 30%"><span>150 eiro</span></div></div>
+    </div>
+</li>
+</ul>
+</div><!-- top-blocks -->
+
+</div><!-- top-content -->
+</div><!-- header -->
+
+
+
+<div class="page-content">
+
+<div class="menu">
+    <div class="find"><div><a href="#">Atrodi savu aizraušanos</a></div></div>
+    
+    <div class="profile-block">
+        <div class="profile-icon"><a href="mans_profils.html#comments">4</a></div>
+        <div class="name">Vārds Uzvārds</div>
+        <a href="#" class="logout">Iziet</a>
+    </div><!-- profile-block -->
+    
+    <div class="nav">
+        <ul>
+            <li><a href="mans_profils.html" class="current">Mans profils</a></li>
+            <li><a href="speles_uzdevumi.html">Spēles uzdevumi</a></li>
+            <li><a href="rezultatu_tabula.html">Rezultātu tabula</a></li>
+            <li><a href="calotava.html">Čalotava</a></li>
+            <li><a href="metodes.html">Metodes</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="speles_noteikumi.html">Spēles noteikumi</a></li>
+            <li><a href="palidzam_kopa.html">Palīdzam kopā</a></li>
+            <li><a href="http://cilvekam.lv/" target="_blank" class="cilvekam">Cilvēkam.lv</a></li>
+        </ul>
+    </div><!-- nav -->
+</div><!-- menu -->
+
+
+	<div class="container">
+		<div class="content">
+        
+        <div class="my-profile">
+			<h3>Mans profils</h3>
+			<div>
+                <form action="" method="post" validate="true">
+                <div class="my-profile-img">
+                <div class="profile-big-icon"><div class="edit"><input type="file" name="photo"></div></div>            
+                <input id="facebook" type="checkbox" />
+                <label for="facebook">Parādīt manu Facebook</label>            
+                </div>
+                
+                <div class="my-profile-descr">
+                <div class="input-block">
+                <input type="text" placeholder="Vārds" style="font-weight: bold">
+                <input type="text" placeholder="Uzvārds" style="font-weight: bold">            
+                </div>
+                <div class="input-block" style="float: right">
+                <input type="text" placeholder="Telefons">
+                <input type="text" placeholder="E-pasts">
+                </div>
+                
+                <div class="input-title">Mainīt paroli</div>
+                <div class="input-block">
+                <input type="text" placeholder="Parole">         
+                </div>
+                <div class="input-block" style="float: right">
+                <input type="text" placeholder="Parole atkārtoti">  
+                </div>
+                
+                <div class="input-title">Obligāti aizpildāmie lauciņi</div>
+                <input type="text" placeholder="Valsts, pilsēta..." required="required">
+                <textarea maxlength="150" placeholder="Manas intereses dzīvē..." required="required"></textarea>
+                <textarea maxlength="150" placeholder="Ko vēlos attīstīt, uzzināt spēlē..." required="required"></textarea>
+                
+                <div class="input-about">
+                <div class="input-title"><strong>Vairāk par mani</strong><span>Maks. 300 zīmes</span></div>
+                <textarea maxlength="300"></textarea>
+                </div>  <!-- input-about -->          
+                </div><!-- my-profile-descr -->
+                <button type="submit">Saglabāt</button>
+                </form>
+			</div><!-- my-profile-div -->
+		</div><!-- my-profile -->
+        
+        
+        <div class="available-games">
+			<h3>Pieejamās spēles</h3>
+            
+            <div class="games">
+                <ul>
+                <li><a href="#">Atrodi savu aizraušanos<div class="game-arr"></div><span></span></a></li>
+                <li><a href="#">Citas spēles nosaukums<div class="game-arr"></div></a></li>
+                </ul>
+            </div><!-- games -->
+            
+		</div><!-- available-games -->
+        
+        
+        <div class="comments" id="comments-block">
+			<h3>Komentāri</h3>
+            
+            <div class="add-comment">
+                <form action="" method="post">
+                <textarea name="comment" placeholder="Ieraksti savu komentāru..."></textarea>
+                <div class="emoji">
+                <div class="add-emoji"></div>
+                <div class="emojis"><img src="img/add_emoji.png" alt=":)"><img src="img/add_emoji.png" alt=":("><img src="img/add_emoji.png" alt=";)"><img src="img/add_emoji.png" alt=":D"><img src="img/add_emoji.png" alt=":O"><img src="img/add_emoji.png" alt="XD"><img src="img/add_emoji.png" alt="(happy)"><img src="img/add_emoji.png" alt="(like)"></div>
+                </div>
+                <div class="add-image"><input type="file" name="image"></div>
+                <button type="submit" disabled="disabled"></button>
+                </form>
+            </div>
+            
+            <div class="comments-list">
+                <ul>
+                    <li>
+                        <div class="c-content">
+                        	<div class="c-img-big" id="c-img-big-1"><div><img src="img/user.png"><a href="publiskais_profils.html">Uzraksti komentāru</a></div></div>
+                            <a data-fancybox data-src="#c-img-big-1" href="javascript:;" class="c-img"></a>
+                            <div class="c-top"><a href="publiskais_profils.html">Vārds Uzvārds</a><span>18.10.18 12.35</span></div>
+                                <div class="c-text"><span>Kāda lietotāja komentārs un komentārs...</span><div class="c-text-img"><a data-fancybox href="img/foto_test_comm.jpg" data-width="970"><img src="img/foto_test_comm.jpg"></a></div></div>
+                                <div class="c-reply">Atbildēt</div>
+                                <div class="add-comment">
+                                    <form action="" method="post">
+                                    <textarea name="comment" placeholder="Ieraksti savu komentāru..."></textarea>
+                                    <div class="emoji">
+                                    <div class="add-emoji"></div>
+                                    <div class="emojis"><img src="img/add_emoji.png" alt=":)"><img src="img/add_emoji.png" alt=":("><img src="img/add_emoji.png" alt=";)"><img src="img/add_emoji.png" alt=":D"><img src="img/add_emoji.png" alt=":O"><img src="img/add_emoji.png" alt="XD"><img src="img/add_emoji.png" alt="(happy)"><img src="img/add_emoji.png" alt="(like)"></div>
+                                    </div>
+                                    <div class="add-image"><input type="file" name="image"></div>
+                                    <button type="submit" disabled="disabled"></button>
+                                    </form>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-content">
+                        	<div class="c-img-big" id="c-img-big-2"><div><img src="img/user.png"><a href="publiskais_profils.html">Uzraksti komentāru</a></div></div>
+                            <a data-fancybox data-src="#c-img-big-2" href="javascript:;" class="c-img"></a>
+                            <div class="c-top"><a href="publiskais_profils.html">Vārds Uzvārds</a><span>18.10.18 12.35</span></div>
+                            <div class="c-text"><span>Kāda lietotāja komentārs un komentārs...</span>
+                            <div class="c-text-video">
+                            <a data-fancybox href="https://www.youtube.com/watch?v=iOnB8iwfojg" data-width="740" data-height="416"><img src="img/video_test_comm.jpg"></a>
+                            </div>
+                            </div>
+                            <div class="c-reply">Atbildēt</div>
+                            <div class="add-comment">
+                                <form action="" method="post">
+                                <textarea name="comment" placeholder="Ieraksti savu komentāru..."></textarea>
+                                <div class="emoji">
+                                <div class="add-emoji"></div>
+                                <div class="emojis"><img src="img/add_emoji.png" alt=":)"><img src="img/add_emoji.png" alt=":("><img src="img/add_emoji.png" alt=";)"><img src="img/add_emoji.png" alt=":D"><img src="img/add_emoji.png" alt=":O"><img src="img/add_emoji.png" alt="XD"><img src="img/add_emoji.png" alt="(happy)"><img src="img/add_emoji.png" alt="(like)"></div>
+                                </div>
+                                <div class="add-image"><input type="file" name="image"></div>
+                                <button type="submit" disabled="disabled"></button>
+                                </form>
+                            </div>
+                        </div>
+                        <ul>                
+                            <li>                            
+                                <div class="c-content">
+                        		<div class="c-img-big" id="c-img-big-3"><div><img src="img/user.png"><a href="publiskais_profils.html">Uzraksti komentāru</a></div></div>
+                            	<a data-fancybox data-src="#c-img-big-3" href="javascript:;" class="c-img"></a>
+                                    <div class="c-top"><a href="publiskais_profils.html">Vārds Uzvārds</a><span>18.10.18 12.35</span></div>
+                                    <div class="c-text"><span>Atbildēts uz kāda lietotāja komentāru ar citu komentāru</span></div>
+                                    <div class="c-reply">Atbildēt</div>
+                                    <div class="add-comment">
+                                        <form action="" method="post">
+                                        <textarea name="comment" placeholder="Ieraksti savu komentāru..."></textarea>
+                                        <div class="emoji">
+                                        <div class="add-emoji"></div>
+                                        <div class="emojis"><img src="img/add_emoji.png" alt=":)"><img src="img/add_emoji.png" alt=":("><img src="img/add_emoji.png" alt=";)"><img src="img/add_emoji.png" alt=":D"><img src="img/add_emoji.png" alt=":O"><img src="img/add_emoji.png" alt="XD"><img src="img/add_emoji.png" alt="(happy)"><img src="img/add_emoji.png" alt="(like)"></div>
+                                        </div>
+                                        <div class="add-image"><input type="file" name="image"></div>
+                                        <button type="submit" disabled="disabled"></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="c-content c-highlighted">
+                        	<div class="c-img-big" id="c-img-big-5"><div><img src="img/user.png"><a href="publiskais_profils.html">Uzraksti komentāru</a></div></div>
+                            <a data-fancybox data-src="#c-img-big-5" href="javascript:;" class="c-img"></a>
+                            <div class="c-top"><a href="publiskais_profils.html">Treneris</a><span>18.10.18 12.35</span></div>
+                            <div class="c-text"><span>Kāda lietotāja komentārs un komentārs...</span></div>
+                            <div class="c-reply">Atbildēt</div>
+                            <div class="add-comment">
+                                <form action="" method="post">
+                                <textarea name="comment" placeholder="Ieraksti savu komentāru..."></textarea>
+                                <div class="emoji">
+                                <div class="add-emoji"></div>
+                                <div class="emojis"><img src="img/add_emoji.png" alt=":)"><img src="img/add_emoji.png" alt=":("><img src="img/add_emoji.png" alt=";)"><img src="img/add_emoji.png" alt=":D"><img src="img/add_emoji.png" alt=":O"><img src="img/add_emoji.png" alt="XD"><img src="img/add_emoji.png" alt="(happy)"><img src="img/add_emoji.png" alt="(like)"></div>
+                                </div>
+                                <div class="add-image"><input type="file" name="image"></div>
+                                <button type="submit" disabled="disabled"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-content">
+                        	<div class="c-img-big" id="c-img-big-6"><div><img src="img/user.png"><a href="publiskais_profils.html">Uzraksti komentāru</a></div></div>
+                            <a data-fancybox data-src="#c-img-big-6" href="javascript:;" class="c-img"></a>
+                            <div class="c-top"><a href="publiskais_profils.html">Vārds Uzvārds</a><span>18.10.18 12.35</span></div>
+                            <div class="c-text"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></div>
+                            <div class="c-reply">Atbildēt</div>
+                            <div class="add-comment">
+                                <form action="" method="post">
+                                <textarea name="comment" placeholder="Ieraksti savu komentāru..."></textarea>
+                                <div class="emoji">
+                                <div class="add-emoji"></div>
+                                <div class="emojis"><img src="img/add_emoji.png" alt=":)"><img src="img/add_emoji.png" alt=":("><img src="img/add_emoji.png" alt=";)"><img src="img/add_emoji.png" alt=":D"><img src="img/add_emoji.png" alt=":O"><img src="img/add_emoji.png" alt="XD"><img src="img/add_emoji.png" alt="(happy)"><img src="img/add_emoji.png" alt="(like)"></div>
+                                </div>
+                                <div class="add-image"><input type="file" name="image"></div>
+                                <button type="submit" disabled="disabled"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-content">
+                        	<div class="c-img-big" id="c-img-big-7"><div><img src="img/user.png"><a href="publiskais_profils.html">Uzraksti komentāru</a></div></div>
+                            <a data-fancybox data-src="#c-img-big-7" href="javascript:;" class="c-img"></a>
+                            <div class="c-top"><a href="publiskais_profils.html">Treneris</a><span>18.10.18 12.35</span></div>
+                            <div class="c-text"><span>Kāda lietotāja komentārs un komentārs...</span></div>
+                            <div class="c-reply">Atbildēt</div>
+                            <div class="add-comment">
+                                <form action="" method="post">
+                                <textarea name="comment" placeholder="Ieraksti savu komentāru..."></textarea>
+                                <div class="emoji">
+                                <div class="add-emoji"></div>
+                                <div class="emojis"><img src="img/add_emoji.png" alt=":)"><img src="img/add_emoji.png" alt=":("><img src="img/add_emoji.png" alt=";)"><img src="img/add_emoji.png" alt=":D"><img src="img/add_emoji.png" alt=":O"><img src="img/add_emoji.png" alt="XD"><img src="img/add_emoji.png" alt="(happy)"><img src="img/add_emoji.png" alt="(like)"></div>
+                                </div>
+                                <div class="add-image"><input type="file" name="image"></div>
+                                <button type="submit" disabled="disabled"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- comments-list -->
+            
+		</div><!-- comments -->
+        
+		
+		</div><!-- content -->
+	</div><!-- container -->
+</div><!-- page-content -->
+
+<div class="top-arrow"></div>
+
+</body>
+</html>

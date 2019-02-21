@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spēle</title>
+<meta name="viewport" content="width=device-width, user-scalable=yes">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/script.js"></script>
+<script src="js/autosize.min.js"></script>
+<script src="js/jquery-simple-validator.min.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="fancybox/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+<link href="media-queries.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="page-content page-content-intro">
+<div class="bg"></div>
+	<div class="container">
+		<div class="content">
+        
+        <div class="intro-title">Spēle<h1>Atrodi savu aizraušanos</h1></div>
+        
+        <div class="enter">
+			<ul>
+            	<li><a href="#login">Pieslēgties</a></li>
+            	<li><a href="#register">Reģistrēties</a></li>
+			</ul>
+            <div id="login">
+                <form action="" method="post" validate="true">
+                    <input type="text" placeholder="E-pasts" required="required">
+                    <input type="password" placeholder="Parole" required="required">
+                    <button type="submit">Pieslēgties</button>
+                    <input id="remember" type="checkbox" />
+                    <label for="remember">Atcerēties mani</label>
+                    <a data-fancybox data-src="#forgot" href="javascript:;" class="forgot">Aizmirsi paroli?</a>
+                    <div class="reg-facebook">Reģistrēties ar <a href="https://www.facebook.com/" target="_blank">Facebook</a></div>
+                </form>
+            </div>
+            <div id="register">
+                <form action="" method="post" validate="true">
+                    <input type="text" placeholder="Vārds" required="required">
+                    <input type="text" placeholder="Uzvārds" required="required">
+                    <input type="text" placeholder="E-pasts" required="required">
+                    <input type="password" placeholder="Parole" required="required">
+                    <input type="password" placeholder="Parole atkārtoti" required="required">
+                    <button type="submit">Reģistrēties</button>
+                    <input id="agree" type="checkbox" required="required" />
+                    <label for="agree">Piekrītu <a data-fancybox data-src="#rules" href="javascript:;">spēles lietošanas noteikumiem</a></label>
+                    <div class="reg-facebook">Reģistrēties ar <a href="https://www.facebook.com/" target="_blank">Facebook</a></div>
+                </form>
+            </div>
+        </div><!-- enter -->
+        
+          <div class="forgot-content popup" id="forgot">
+              <div>
+              <h2>Atjaunot paroli</h2>
+              Ievadiet savu e-pasta adresi, un mēs Jums nosūtīsim paroles atjaunošanas saiti.
+              <form action="" method="post" validate="true">
+                  <input type="text" placeholder="E-pasts" required="required">
+                  <button type="submit">Nosūtīt</button>
+              </form>
+              </div>
+          </div><!-- forgot-content -->
+          
+        
+          <div class="rules-content popup" id="rules">
+              <div>              
+              <h5>Spēles lietošanas noteikumi</h5><br />
+              <br />
+              <strong>Lorem ipsum dolor sit amet</strong><br />
+              Consectetur adipiscing elit. Phasellus consequat urna vitae dolor ullamcorper, ut porttitor arcu ultricies. Mauris dignissim sem nisi, quis tincidunt augue imperdiet id. Aliquam erat volutpat. Phasellus tincidunt purus quis mauris consequat, a porttitor diam ullamcorper.<br />
+              <br />
+              <strong>Maecenas ut tempus</strong><br />
+              Ligula, ac pulvinar elit. Donec nec tristique mauris. Sed vulputate, erat luctus cursus congue, ante ipsum dapibus nunc, ut varius quam dui nec enim. Phasellus sit amet rutrum velit. Suspendisse placerat lobortis urna nec gravida.<br />
+              Donec nec tristique mauris. Sed vulputate, erat luctus cursus.<br />
+              <br />
+              <strong>Lorem ipsum dolor sit amet</strong><br />
+              Consectetur adipiscing elit. Phasellus consequat urna vitae dolor ullamcorper, ut porttitor arcu ultricies. Mauris dignissim sem nisi, quis tincidunt augue imperdiet id. Aliquam erat volutpat. Phasellus tincidunt purus quis mauris consequat, a porttitor diam ullamcorper.<br />
+              <br />
+              <strong>Maecenas ut tempus</strong><br />
+              Ligula, ac pulvinar elit. Donec nec tristique mauris. Sed vulputate, erat luctus cursus congue, ante ipsum dapibus nunc, ut varius quam dui nec enim. Phasellus sit amet rutrum velit. Suspendisse placerat lobortis urna nec gravida.<br />
+              Donec nec tristique mauris. Sed vulputate, erat luctus cursus.<br />
+              <br />
+              <strong>Maecenas ut tempus</strong><br />
+              Ligula, ac pulvinar elit. Donec nec tristique mauris. Sed vulputate, erat luctus cursus congue, ante ipsum dapibus nunc, ut varius quam dui nec enim. Phasellus sit amet rutrum velit. Suspendisse placerat lobortis urna nec gravida.<br />
+              Donec nec tristique mauris. Sed vulputate, erat luctus cursus. Aliquam erat volutpat. Phasellus tincidunt purus quis mauris consequat, a porttitor diam ullamcorper.              
+              </div>
+          </div><!-- rules-content -->
+		
+		</div><!-- content -->
+	</div><!-- container -->
+</div><!-- page-content -->
+
+<div class="top-arrow"></div>
+
+</body>
+</html>
