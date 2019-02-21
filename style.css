@@ -442,11 +442,21 @@ h5 {
 }
 a.logo {
 	background: url(img/logo.png) no-repeat center;
-	background-size: 30px 41px;
-	width: 30px !important;
-	height: 41px;
-	margin: -11px 0 6px 0;
+	background-size: 100px 24px;
+	width: 100px !important;
+	height: 24px;
+	margin: -2px 0 15px 0;
 	float: left;
+}
+a.logo-mob {
+	background: url(img/logo_mob.png) no-repeat center;
+	background-size: 21px 22px;
+	width: 21px;
+	height: 22px;
+	position: absolute;
+	top: 38px;
+	left: 20px;
+	display: none;
 }
 .top-content {
 	width: auto;
@@ -793,7 +803,7 @@ a.logout:hover:before {
 	height: 40px;
 	position: absolute;
 	top: 30px;
-	left: 20px;
+	left: 45px;
 	padding: 10px;
 	cursor: pointer;
 	z-index: 1001;
@@ -2128,7 +2138,8 @@ a.c-img:hover:after {
 }
 .task-m {
 	width: 100%;
-	padding: 84px 0 4px 0;
+	padding: 74px 0 0 0;
+	margin-bottom: -6px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -2139,7 +2150,7 @@ a.c-img:hover:after {
 	color: #797a7c;
 	font-size: 16px;
 	line-height: 22px;
-	padding: 0 60px 0 40px;
+	padding: 10px 60px 10px 40px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -2153,7 +2164,7 @@ a.c-img:hover:after {
 	width: 30px;
 	height: 30px;
 	position: absolute;
-	top: -4px;
+	top: 6px;
 	left: 0;
 	-moz-border-radius: 100%;
 	-webkit-border-radius: 100%;

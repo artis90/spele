@@ -95,7 +95,7 @@
 		height: 60px;
 		background-size: 60px 60px;
 	}
-	#menu-bttn {
+	#menu-bttn, a.logo-mob {
 		display: block;
 	}
 	.header .find {
@@ -251,9 +251,6 @@
 	.enter > ul > li > a {
 		font-size: 16px;
 	}
-	#menu-bttn {
-		left: 10px;
-	}
 	.top-blocks {
 		width: 100%;
 		padding: 0 20px 20px 20px;
@@ -270,8 +267,7 @@
 	}
 	.task-m {
 		width: 100%;
-		padding: 0 0 28px 0;
-		margin-top: -6px;
+		padding: 53px 0 42px 0;
 		float: left;
 	}
 	.task-m div {
@@ -718,7 +714,7 @@
 	}
 	.task-top .status {
 		width: calc(100% - 70px);
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 24px;
 		padding: 13px 0;
 	}
