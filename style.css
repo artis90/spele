@@ -1363,7 +1363,7 @@ button:hover, .button:hover {
 	position: relative;
 	float: left;
 }
-.comments-list .add-comment {
+.comments-list .add-comment, .answers-tabs ul li .add-comment {
 	padding: 14px 0 3px 0;
 	margin: 0;
 	display: none;
@@ -1482,7 +1482,7 @@ button:hover, .button:hover {
 .comments-list ul li ul li .c-content {
 	margin-top: -15px;	
 }
-a.c-img {
+a.c-img, .c-img {
 	background: url(img/user.png) no-repeat center #dedede;
 	background-size: 50px 50px;
 	width: 50px;
@@ -1598,6 +1598,8 @@ a.c-img:hover:after {
 	width: 100%;
 	font-size: 18px;
 	line-height: 23px;
+	position: relative;
+	padding-right: 28px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1639,6 +1641,435 @@ a.c-img:hover:after {
 }
 .c-highlighted {
 	background: #fff8b2;
+}
+.c-edit-content {
+	width: 4px;
+	position: absolute;
+	top: -21px;
+	right: -8px;
+	z-index: 50;
+}
+.c-edit-content .c-edit-bttn {
+	width: 16px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.c-edit-content .c-edit-bttn span {
+	background: #8f9091;
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+}
+.c-edit-content .c-edit-bttn span:before {
+	content: '';
+	background: #8f9091;
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	top: 7px;
+	left: 0;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+}
+.c-edit-content .c-edit-bttn span:after {
+	content: '';
+	background: #8f9091;
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	top: 14px;
+	left: 0;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+}
+.c-edit-content .c-edit-bttn:hover span, .c-edit-content .c-edit-bttn:hover span:before, .c-edit-content .c-edit-bttn:hover span:after {
+	background: #000;
+}
+.c-edit-content .c-edit-box {
+	background: #d2d3d3;
+	width: 125px;
+	border: 1px solid #bcbcbd;
+	position: absolute;
+	top: 37px;
+	right: -16px;
+	padding: 8px 0;
+	display: none;
+	overflow: hidden;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-moz-box-shadow: 0 4px 8x 0 rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.c-edit-content .c-edit-box a {
+	width: 100%;
+	color: #202124;
+	font-size: 14px;
+	line-height: 28px;
+	padding-left: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-moz-transition: background-color 0.2s ease-in-out;
+	-o-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
+	float: left;
+}
+.c-edit-content .c-edit-box a:first-child {
+	background: url(img/edit_c.png) no-repeat 13px 8px;
+	background-size: 13px 13px;
+}
+.c-edit-content .c-edit-box a:last-child {
+	background: url(img/delete_c.png) no-repeat 15px 7px;
+	background-size: 11px 14px;
+}
+.c-edit-content .c-edit-box a:hover {
+	background-color: #91e8f9;
+	text-decoration: none;
+}
+.c-edit {
+	display: none;
+	max-width: 600px !important;
+	padding: 0 !important;
+	overflow: visible !important;
+	width: 100%;
+}
+.c-edit .fancybox-close-small {
+	display: none;
+}
+.c-edit h4 {
+	background: #e4e4e5;
+	padding: 10px 22px;
+	border-bottom: 1px solid #d2d3d3;
+	position: relative;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+.c-edit h4 span {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	cursor: pointer;
+}
+.c-edit h4 span:before {
+	content: "";
+	background: #8f9091;
+	position: absolute;
+	top: 1px;
+	right: 15px;
+	width: 2px;
+	height: 30px;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	-ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.c-edit h4 span:after {
+	content: "";
+	background: #8f9091;
+	position: absolute;
+	top: 1px;
+	right: 15px;
+	width: 2px;
+	height: 30px;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	-ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.c-edit h4 span:hover:before, .c-edit h4 span:hover:after {
+	background: #202124;
+}
+.c-edit .c-edit-form {
+	width: 100%;
+	padding: 20px 16px 25px 16px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+}
+.c-edit .c-img {
+	top: -9px;
+	left: 4px;
+}
+.c-edit .c-edit-text {
+	width: 100%;
+	position: relative;
+	padding: 0 54px 0 74px;
+	margin: 12px 0 11px 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+}
+.c-edit textarea {
+	background: none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	line-height: 24px !important;
+	color: #202124;
+	border: 0;
+	outline: none;
+	resize: none !important;
+	width: 100%;
+	height: 24px;
+	float: left;
+}
+.c-edit button {
+	background: #91e8f9;
+	color: #202124;
+	max-width: 258px;
+	font-size: 18px;
+	margin: 26px 0 0 4px;
+	float: left;
+}
+.c-edit button:hover {
+	background: #23d1f2;
+}
+.c-edit .emoji {
+	position: absolute;
+	right: 4px;
+	top: auto;
+	bottom: 0;
+}
+.c-edit ul {
+	width: 100%;
+	list-style: none;
+	padding: 0;
+	margin: 22px 0 0 0;
+	float: left;
+}
+.c-edit ul li {
+	width: 25%;
+	list-style: none;
+	padding: 0 4px;
+	margin: 4px 0;
+	position: relative;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+}
+.c-edit ul li:before {
+	content: '';
+	background: #d2d3d3;
+	width: 4px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -2px;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	z-index: -1;
+}
+.c-edit ul li:after {
+	content: '';
+	background: #d2d3d3;
+	width: 40px;
+	height: 4px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -2px 0 0 -20px;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	z-index: -1;
+}
+.c-edit ul li:hover:before, .c-edit ul li:hover:after {
+	background: #8f9091;
+}
+.c-edit ul li div {
+	background-size: cover !important;
+	background-position: center !important;
+	display: block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.c-edit ul li div:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;	
+	border: 3px dashed #d2d3d3;
+	z-index: -1;
+}
+.c-edit ul li input[type=file] {
+	font-size: 134px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+input[type=file]::-webkit-file-upload-button {
+	cursor: pointer;
+}
+.c-edit ul li span {
+	background: #202124;
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+	position: absolute;
+	top: 9px;
+	right: 9px;
+	opacity: 0;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+}
+.c-edit ul li span:after {
+	content: "";
+	background: #fff;
+	position: absolute;
+	top: 4px;
+	right: 10px;
+	width: 2px;
+	height: 14px;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	-ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.c-edit ul li span:before {
+	content: "";
+	background: #fff;
+	position: absolute;
+	top: 4px;
+	right: 10px;
+	width: 2px;
+	height: 14px;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	-ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.c-edit ul li:hover span {
+	opacity: 1;
+}
+.c-edit ul li img {
+	width: 100%;
+	position: relative;
+	z-index: 10;
+}
+.c-edit > div:first-child {
+	transform: translateY(-50px);
+	transition: all .2s;
+	background: #f2f2f2;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: 0 4px 8x 0 rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	float: left;
+}
+.fancybox-slide--current .c-edit > div:first-child {
+	transform: translateY(0);
+	opacity: 1;
+}
+.c-edit:after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	pointer-events: none;
+}
+.c-delete {
+	width: 100%;
+	max-width: 671px !important;
+}
+.c-delete form {
+	width: 100%;
+	float: left;
+}	
+.c-delete h2 {
+	font-weight: normal;
+	padding-bottom: 92px;
+	text-align: center;
+}
+.c-delete button {
+	background: #d2d3d3;
+	max-width: 273px;
+	color: #202124;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	float: left;
+}
+.c-delete button:hover {
+	background: #e4e4e4;
+}
+.c-delete button:last-child {
+	background: #ff5556;
+	float: right;
+}
+.c-delete button:last-child:hover {
+	background: #ff8888;
 }
 .emoji {
 	position: absolute;
@@ -2418,6 +2849,10 @@ a.task-method:hover {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.answers ul li .c-edit-content {
+	top: 10px;
+	right: 14px;
+}
 .attachment {
 	background: url(img/attachment.png) no-repeat center;
 	background-size: 24px 23px;
@@ -2495,6 +2930,9 @@ a.task-method:hover {
 	border-bottom-right-radius: 10px;
 	float: left;
 }
+.answers-tabs #other_answers {
+	padding: 37px 0 26px 0;
+}
 .answers-tabs > ul {
 	width: 100%;
 	margin: 0;
@@ -2540,24 +2978,11 @@ a.task-method:hover {
 	color: #202124;
 	background: #f2f2f2;
 }
-.answers-tabs > div > ul {
-	width: 100%;
-	list-style: none;
-	margin: 0;
-	padding: 39px 30px 0 30px;
-	float: left;
+.answers-tabs > div > ul > li .c-content {
+	padding-bottom: 2px;
 }
-.answers-tabs > div > ul > li {
-	width: 100%;
-	min-height: 50px;
-	margin: 0;
-	padding: 0 0 23px 66px;
-	position: relative;
-	float: left;
-}
-.answers-tabs > div > ul > li .c-img {
-	top: 4px;
-	left: 0;
+.answers-tabs > div > ul > li ul {
+	padding-top: 9px;
 }
 .answers-tabs > div > ul > li > span {
 	width: 100%;

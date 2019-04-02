@@ -193,6 +193,10 @@
 		font-size: 22px;
 		line-height: 29px;
 	}
+	.c-edit h4 {
+		font-size: 24px;
+		line-height: 35px;
+	}
 	h5 {
 		font-size: 20px;
 		line-height: 29px;
@@ -875,7 +879,31 @@
 	.c-text {
 		font-size: 16px;
 		line-height: 19px;
-		padding-right: 10px;
+		padding-right: 21px;
+	}
+	.c-edit-content {
+		right: -4px;
+	}	
+	.c-edit-content .c-edit-box {
+		width: 260px;
+		top: 4px;
+		right: 4px;
+		padding: 0;
+	}
+	.c-edit-content .c-edit-box a {
+		width: 50%;
+		line-height: 76px;
+		padding-left: 55px;
+		float: left;
+	}
+	.c-edit-content .c-edit-box a:first-child {
+		border-right: 1px solid #bcbcbd;
+		background: url(img/edit_c@2x.png) no-repeat 29px 32px;
+		background-size: 13px 13px;
+	}
+	.c-edit-content .c-edit-box a:last-child {
+		background: url(img/delete_c@2x.png) no-repeat 29px 31px;
+		background-size: 11px 14px;
 	}
 	.c-text .c-text-img img, .c-text .c-text-video img {
 		margin: 7px 0 6px 0;
@@ -901,6 +929,51 @@
 		top: -4px;
 		right: 10px;
 		height: 30px;
+	}
+	.c-delete h2 {
+		padding-bottom: 70px;
+	}
+	.c-delete button {
+		display: table;
+		margin: 0 auto 30px auto;
+		float: none !important;
+	}
+}
+
+@media only screen and (max-width:600px) {
+	.c-edit-form {
+		text-align: center;
+	}
+	.c-edit h4 {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+	.c-edit ul {
+		max-width: 284px;
+		margin: 0 auto;
+		padding: 22px 0 0 0;
+		display: table;
+		float: none;
+	}
+	.c-edit ul li {
+		width: 50%;
+	}
+	.c-edit ul li span {
+		opacity: 1;
+	}
+	.c-edit button {
+		margin: 26px auto 0 auto;
+		display: inline-table;
+		float: none;
+	}
+	.answers ul li .c-edit-content {
+		top: 6px;
+		right: 14px;
+	}
+	.c-edit > div:first-child {
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		border-radius: 0;
 	}
 }
 
